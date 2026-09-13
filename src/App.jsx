@@ -1,0 +1,72 @@
+import React, { useState, useEffect } from 'react';
+import Navbar from './components/layout/Navbar';
+import CompanyList from './components/companies/CompanyList';
+import { initStorage, resetToDemoData } from './services/storageService';
+import { Clock, Building2 } from 'lucide-react';
+
+function App() {
+  const [activeTab, setActiveTab] = useState('companies');
+  const [companies, setCompanies] = useState([]);
+
+  useEffect(() => {
+    const data = initStorage();
+    setCompanies(data.companies);
+  }, []);
+
+  const handleResetData = () => {
+    if (window.confirm('Reset all demo data (companies, students, drives) to initial sample records?')) {
+      const fresh = resetToDemoData();
+      setCompanies(fresh.companies);
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
+      <Navbar
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+        onResetData={handleResetData}
+      />
+
+      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {activeTab === 'companies' ? (
+          <CompanyList
+            companies={companies}
+            onCompaniesChange={setCompanies}
+          />
+        ) : (
+          <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">
+            <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-100">
+              <Clock className="w-7 h-7" />
+            </div>
+            <h2 className="text-xl font-bold text-slate-900 capitalize mb-2">
+              {activeTab.replace(/-/g, ' ')} Section
+            </h2>
+            <p className="text-sm text-slate-500 mb-6">
+              This section is coming soon. The Companies directory is fully functional now.
+            </p>
+            <button
+              type="button"
+              onClick={() => setActiveTab('companies')}
+              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
+            >
+              <Building2 className="w-4 h-4 mr-1.5" />
+              Go to Companies
+            </button>
+          </div>
+        )}
+      </main>
+
+      <footer className="bg-white border-t border-slate-200 py-6 text-xs text-slate-400">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <span>Placement Drive Tracker — Internal Training &amp; Placement Office Tool</span>
+          <span className="text-slate-500 font-medium">Demo Portfolio Project • Persistent LocalStorage</span>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
+
+

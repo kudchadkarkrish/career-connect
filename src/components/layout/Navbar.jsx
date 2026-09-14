@@ -13,7 +13,7 @@ import {
 
 export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
   const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, ready: false },
+    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, ready: true },
     { id: 'companies', label: 'Companies', icon: Building2, ready: true },
     { id: 'students', label: 'Students', icon: Users, ready: true },
     { id: 'drives', label: 'Placement Drives', icon: Briefcase, ready: true },

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
+import Dashboard from './components/dashboard/Dashboard';
 import CompanyList from './components/companies/CompanyList';
 import StudentList from './components/students/StudentList';
 import DriveList from './components/drives/DriveList';
@@ -8,7 +9,7 @@ import { initStorage, resetToDemoData } from './services/storageService';
 import { Clock, Building2 } from 'lucide-react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('companies');
+  const [activeTab, setActiveTab] = useState('dashboard');
   const [companies, setCompanies] = useState([]);
   const [students, setStudents] = useState([]);
   const [drives, setDrives] = useState([]);
@@ -38,7 +39,14 @@ function App() {
       />
 
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {activeTab === 'companies' ? (
+        {activeTab === 'dashboard' ? (
+          <Dashboard
+            companies={companies}
+            students={students}
+            drives={drives}
+            onNavigate={setActiveTab}
+          />
+        ) : activeTab === 'companies' ? (
           <CompanyList
             companies={companies}
             onCompaniesChange={setCompanies}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/layout/Navbar';
 import CompanyList from './components/companies/CompanyList';
 import StudentList from './components/students/StudentList';
+import DriveList from './components/drives/DriveList';
 import { initStorage, resetToDemoData } from './services/storageService';
 import { Clock, Building2 } from 'lucide-react';
 
@@ -9,11 +10,13 @@ function App() {
   const [activeTab, setActiveTab] = useState('companies');
   const [companies, setCompanies] = useState([]);
   const [students, setStudents] = useState([]);
+  const [drives, setDrives] = useState([]);
 
   useEffect(() => {
     const data = initStorage();
     setCompanies(data.companies);
     setStudents(data.students);
+    setDrives(data.drives);
   }, []);
 
   const handleResetData = () => {
@@ -21,6 +24,7 @@ function App() {
       const fresh = resetToDemoData();
       setCompanies(fresh.companies);
       setStudents(fresh.students);
+      setDrives(fresh.drives);
     }
   };
 
@@ -43,6 +47,12 @@ function App() {
             students={students}
             onStudentsChange={setStudents}
           />
+        ) : activeTab === 'drives' ? (
+          <DriveList
+            drives={drives}
+            onDrivesChange={setDrives}
+            companies={companies}
+          />
         ) : (
           <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">
             <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-100">
@@ -52,7 +62,7 @@ function App() {
               {activeTab.replace(/-/g, ' ')} Section
             </h2>
             <p className="text-sm text-slate-500 mb-6">
-              This section is coming soon. The Companies and Students sections are fully functional now.
+              This section is coming soon. Companies, Students, and Placement Drives are fully functional.
             </p>
             <button
               type="button"
@@ -77,3 +87,4 @@ function App() {
 }
 
 export default App;
+

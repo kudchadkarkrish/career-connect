@@ -127,8 +127,8 @@ Ensure you have [Node.js](https://nodejs.org/) (v18 or later) installed on your 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/kudchadkarkrish/placement-drive-tracker.git
-   cd placement-drive-tracker
+   git clone https://github.com/kudchadkarkrish/career-connect.git
+   cd career-connect
    ```
 
 2. Install dependencies:

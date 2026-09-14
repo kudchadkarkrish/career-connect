@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * PLACEMENT DRIVE TRACKER - DEMO DATASET
+ * CAREERCONNECT - DEMO DATASET
  * ============================================================================
  * NOTE: All data below is purely synthetic and curated for portfolio demo
  * purposes. It does not represent actual student records or college drives.

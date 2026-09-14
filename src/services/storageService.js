@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- * PLACEMENT DRIVE TRACKER - STORAGE SERVICE
+ * CAREERCONNECT - STORAGE SERVICE
  * ============================================================================
  * Handles browser localStorage persistence for Companies, Students, and Drives.
  * Seeds realistic demo data on initial app launch and supports one-click reset.

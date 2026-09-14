@@ -7,14 +7,12 @@ import {
   CheckSquare,
   BarChart3,
   LayoutDashboard,
-  RotateCcw,
-  Sparkles,
   Sun,
   Moon
 } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
-export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
+export const Navbar = ({ activeTab, onTabChange }) => {
   const { isDark, toggle } = useTheme();
 
   const navItems = [
@@ -36,22 +34,18 @@ export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
-              <div className="flex items-center space-x-2">
-                <span className="font-bold text-slate-900 dark:text-slate-100 text-lg tracking-tight">
-                  Placement Drive Tracker
-                </span>
-                <span className="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-200/60 dark:border-amber-700/50">
-                  <Sparkles className="w-2.5 h-2.5 mr-1 text-amber-500" />
-                  Demo Mode
+              <div className="flex items-center">
+                <span className="font-extrabold text-slate-900 dark:text-slate-100 text-xl tracking-tight select-none">
+                  Career<span className="text-indigo-600 dark:text-indigo-400">Connect</span>
                 </span>
               </div>
               <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium hidden sm:block">
-                Training & Placement Cell Portal
+                Training &amp; Placement Management Portal
               </p>
             </div>
           </div>
 
-          {/* Right Actions: Theme Toggle + Reset */}
+          {/* Right Actions: Theme Toggle */}
           <div className="flex items-center space-x-2">
             {/* Dark / Light toggle */}
             <button
@@ -61,18 +55,6 @@ export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
               className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-colors cursor-pointer"
             >
               {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-            </button>
-
-            {/* Reset button */}
-            <button
-              type="button"
-              onClick={onResetData}
-              title="Restore initial synthetic sample records"
-              className="inline-flex items-center text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
-            >
-              <RotateCcw className="w-3.5 h-3.5 mr-1.5 text-slate-500 dark:text-slate-400" />
-              <span className="hidden md:inline">Reset Demo Data</span>
-              <span className="md:hidden">Reset</span>
             </button>
           </div>
         </div>

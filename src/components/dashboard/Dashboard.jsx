@@ -8,7 +8,6 @@ import {
   CalendarDays,
   MapPin,
   GraduationCap,
-  Info,
   ArrowRight
 } from 'lucide-react';
 import {
@@ -170,15 +169,6 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
         <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-1">
           Live overview of your campus placement activity.
         </p>
-      </div>
-
-      {/* Demo notice */}
-      <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-3.5 flex items-start space-x-3 text-amber-900 text-xs">
-        <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-        <div>
-          <span className="font-semibold">Demo Environment: </span>
-          All numbers below are derived live from the synthetic dataset stored in your browser (localStorage). They update automatically when you add, edit, or delete records in other sections.
-        </div>
       </div>
 
       {/* ── KPI Cards ── */}

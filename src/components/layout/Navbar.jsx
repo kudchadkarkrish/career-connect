@@ -17,7 +17,7 @@ export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
     { id: 'companies', label: 'Companies', icon: Building2, ready: true },
     { id: 'students', label: 'Students', icon: Users, ready: true },
     { id: 'drives', label: 'Placement Drives', icon: Briefcase, ready: true },
-    { id: 'eligibility', label: 'Eligibility', icon: CheckSquare, ready: false },
+    { id: 'eligibility', label: 'Eligibility', icon: CheckSquare, ready: true },
     { id: 'analytics', label: 'Analytics', icon: BarChart3, ready: false },
   ];
 

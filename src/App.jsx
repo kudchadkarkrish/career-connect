@@ -3,6 +3,7 @@ import Navbar from './components/layout/Navbar';
 import CompanyList from './components/companies/CompanyList';
 import StudentList from './components/students/StudentList';
 import DriveList from './components/drives/DriveList';
+import EligibilityChecker from './components/eligibility/EligibilityChecker';
 import { initStorage, resetToDemoData } from './services/storageService';
 import { Clock, Building2 } from 'lucide-react';
 
@@ -52,6 +53,11 @@ function App() {
             drives={drives}
             onDrivesChange={setDrives}
             companies={companies}
+          />
+        ) : activeTab === 'eligibility' ? (
+          <EligibilityChecker
+            students={students}
+            drives={drives}
           />
         ) : (
           <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">

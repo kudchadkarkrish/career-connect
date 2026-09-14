@@ -128,14 +128,14 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center space-x-3">
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
               Recruiting Companies
             </h1>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/60">
               {companies.length} Total
             </span>
           </div>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
             Manage partner recruiters, tier classifications, hiring profiles, and compensation packages.
           </p>
         </div>
@@ -153,8 +153,8 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
       </div>
 
       {/* Subtle Demo Data Notice Banner */}
-      <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-3.5 flex items-start space-x-3 text-amber-900 text-xs">
-        <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+      <div className="bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/50 rounded-xl p-3.5 flex items-start space-x-3 text-amber-900 dark:text-amber-300 text-xs">
+        <Info className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
         <div>
           <span className="font-semibold">Demo Environment: </span>
           The companies below are synthetic records configured for portfolio showcase. You can add new companies, modify existing roles/CTC, or delete records. All changes persist in your browser session.
@@ -162,7 +162,7 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
       </div>
 
       {/* Search, Filter & View Controls */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row gap-3 items-center justify-between">
+      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col md:flex-row gap-3 items-center justify-between">
         {/* Search Input */}
         <div className="relative w-full md:w-80">
           <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -171,7 +171,7 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search company, industry, or role..."
-            className="w-full text-xs sm:text-sm pl-9 pr-8 py-2 rounded-lg border border-slate-200 focus:outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 transition-colors"
+            className="w-full text-xs sm:text-sm pl-9 pr-8 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 transition-colors"
           />
           {searchTerm && (
             <button
@@ -191,7 +191,7 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
             <select
               value={tierFilter}
               onChange={(e) => setTierFilter(e.target.value)}
-              className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-slate-700 outline-hidden focus:border-indigo-500"
+              className="text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-2 text-slate-700 dark:text-slate-300 outline-hidden focus:border-indigo-500"
             >
               <option value="ALL">All Tiers</option>
               <option value="Tier-1 Dream">Tier-1 Dream</option>
@@ -207,7 +207,7 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-slate-700 outline-hidden focus:border-indigo-500"
+            className="text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-2 text-slate-700 dark:text-slate-300 outline-hidden focus:border-indigo-500"
           >
             <option value="ALL">All Status</option>
             <option value="Active Partner">Active Partner</option>
@@ -215,15 +215,15 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
           </select>
 
           {/* Grid / Table Toggle */}
-          <div className="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200">
+          <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg border border-slate-200 dark:border-slate-700">
             <button
               type="button"
               onClick={() => setViewMode('grid')}
               title="Grid View"
               className={`p-1.5 rounded-md transition-colors ${
                 viewMode === 'grid'
-                  ? 'bg-white text-indigo-600 shadow-xs'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white dark:bg-slate-700 text-indigo-600 shadow-xs'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
@@ -234,8 +234,8 @@ export const CompanyList = ({ companies, onCompaniesChange }) => {
               title="Table View"
               className={`p-1.5 rounded-md transition-colors ${
                 viewMode === 'table'
-                  ? 'bg-white text-indigo-600 shadow-xs'
-                  : 'text-slate-500 hover:text-slate-800'
+                  ? 'bg-white dark:bg-slate-700 text-indigo-600 shadow-xs'
+                  : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
               }`}
             >
               <List className="w-4 h-4" />

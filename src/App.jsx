@@ -31,7 +31,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 dark:text-slate-100 text-slate-800 flex flex-col font-sans">
       <Navbar
         activeTab={activeTab}
         onTabChange={setActiveTab}
@@ -68,14 +68,14 @@ function App() {
             drives={drives}
           />
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">
-            <div className="w-14 h-14 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-100">
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">
+            <div className="w-14 h-14 bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-indigo-100 dark:border-indigo-900">
               <Clock className="w-7 h-7" />
             </div>
-            <h2 className="text-xl font-bold text-slate-900 capitalize mb-2">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-slate-100 capitalize mb-2">
               {activeTab.replace(/-/g, ' ')} Section
             </h2>
-            <p className="text-sm text-slate-500 mb-6">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mb-6">
               This section is coming soon. Companies, Students, and Placement Drives are fully functional.
             </p>
             <button
@@ -90,7 +90,7 @@ function App() {
         )}
       </main>
 
-      <footer className="bg-white border-t border-slate-200 py-6 text-xs text-slate-400">
+      <footer className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-6 text-xs text-slate-400 dark:text-slate-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2">
           <span>Placement Drive Tracker — Internal Training &amp; Placement Office Tool</span>
           <span className="text-slate-500 font-medium">Demo Portfolio Project • Persistent LocalStorage</span>

@@ -20,29 +20,29 @@ export const Modal = ({ isOpen, onClose, title, children, maxWidth = 'max-w-xl' 
 
   return (
     <>
-      {/* Backdrop — sits below the dialog */}
+      {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-slate-900/50"
+        className="fixed inset-0 z-40 bg-slate-900/60 dark:bg-black/70"
         onClick={onClose}
         aria-hidden="true"
       />
 
-      {/* Dialog wrapper — above the backdrop */}
+      {/* Dialog wrapper */}
       <div
         className="fixed inset-0 z-50 flex items-center justify-center p-4"
         onClick={onClose}
       >
         <div
-          className={`w-full ${maxWidth} rounded-2xl bg-white text-left shadow-2xl border border-slate-200 flex flex-col max-h-[90vh]`}
+          className={`w-full ${maxWidth} rounded-2xl bg-white dark:bg-slate-900 text-left shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col max-h-[90vh]`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4 bg-slate-50 rounded-t-2xl shrink-0">
-            <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
+          <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 px-6 py-4 bg-slate-50 dark:bg-slate-800/60 rounded-t-2xl shrink-0">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100">{title}</h3>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-lg p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-600 transition-colors"
+              className="rounded-lg p-1 text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
             >
               <X className="w-5 h-5" />
             </button>

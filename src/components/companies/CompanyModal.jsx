@@ -114,7 +114,7 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
         {/* Row 1: Name & Industry */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Company Name <span className="text-rose-500">*</span>
             </label>
             <input
@@ -123,17 +123,17 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Cisco Systems"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors dark:bg-slate-800 dark:text-slate-200 ${
                 errors.name
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.name && <p className="text-[11px] text-rose-500 mt-1">{errors.name}</p>}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Industry / Sector <span className="text-rose-500">*</span>
             </label>
             <input
@@ -142,10 +142,10 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
               value={formData.industry}
               onChange={handleChange}
               placeholder="e.g. Enterprise Cloud / FinTech"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors dark:bg-slate-800 dark:text-slate-200 ${
                 errors.industry
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.industry && <p className="text-[11px] text-rose-500 mt-1">{errors.industry}</p>}
@@ -155,12 +155,12 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
         {/* Row 2: Tier & Status */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Company Tier</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Company Tier</label>
             <select
               name="tier"
               value={formData.tier}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-200"
             >
               {TIER_OPTIONS.map((t) => (
                 <option key={t} value={t}>
@@ -171,12 +171,12 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Partnership Status</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Partnership Status</label>
             <select
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-200"
             >
               <option value="Active Partner">Active Partner</option>
               <option value="Inactive">Inactive</option>
@@ -187,7 +187,7 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
         {/* Row 3: CTC Range */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Base CTC (LPA) <span className="text-rose-500">*</span>
             </label>
             <input
@@ -198,10 +198,10 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
               value={formData.basePackageLPA}
               onChange={handleChange}
               placeholder="e.g. 12.0"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors dark:bg-slate-800 dark:text-slate-200 ${
                 errors.basePackageLPA
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.basePackageLPA && (
@@ -210,7 +210,7 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Max CTC (LPA) <span className="text-rose-500">*</span>
             </label>
             <input
@@ -221,10 +221,10 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
               value={formData.maxPackageLPA}
               onChange={handleChange}
               placeholder="e.g. 18.5"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-hidden transition-colors dark:bg-slate-800 dark:text-slate-200 ${
                 errors.maxPackageLPA
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.maxPackageLPA && (
@@ -235,7 +235,7 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
 
         {/* Row 4: Roles Offered */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Roles Offered (Comma Separated)
           </label>
           <input
@@ -244,56 +244,56 @@ export const CompanyModal = ({ isOpen, onClose, onSave, companyToEdit }) => {
             value={formData.rolesString}
             onChange={handleChange}
             placeholder="e.g. Software Engineer, QA Engineer, Cloud Associate"
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
           />
-          <p className="text-[11px] text-slate-400 mt-1">Separate multiple job profiles with a comma</p>
+          <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Separate multiple job profiles with a comma</p>
         </div>
 
         {/* Row 5: Location, Website, Email */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Location(s)</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Location(s)</label>
             <input
               type="text"
               name="location"
               value={formData.location}
               onChange={handleChange}
               placeholder="e.g. Bengaluru / Pune"
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Careers Website</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Careers Website</label>
             <input
               type="url"
               name="website"
               value={formData.website}
               onChange={handleChange}
               placeholder="https://..."
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Recruiter Email</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Recruiter Email</label>
             <input
               type="email"
               name="contactEmail"
               value={formData.contactEmail}
               onChange={handleChange}
               placeholder="campus@company.com"
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 px-3 py-2 outline-hidden focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
             />
           </div>
         </div>
 
         {/* Footer Actions */}
-        <div className="border-t border-slate-100 pt-4 flex items-center justify-end space-x-3 mt-6">
+        <div className="border-t border-slate-100 dark:border-slate-800 pt-4 flex items-center justify-end space-x-3 mt-6">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+            className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors cursor-pointer"
           >
             Cancel
           </button>

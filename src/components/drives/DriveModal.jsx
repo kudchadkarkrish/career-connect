@@ -156,14 +156,14 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Row 1: Company */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Company <span className="text-rose-500">*</span>
           </label>
           <select
             name="companyId"
             value={formData.companyId}
             onChange={handleCompanySelect}
-            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none bg-white transition-colors ${
+            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none bg-white dark:bg-slate-900 transition-colors ${
               errors.companyId
                 ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
                 : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
@@ -197,7 +197,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               {errors.customCompanyName && (
                 <p className="text-[11px] text-rose-500 mt-1">{errors.customCompanyName}</p>
               )}
-              <p className="text-[11px] text-slate-400 mt-1">
+              <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-1">
                 This company will be stored with the drive only — it won't be added to the Companies directory.
               </p>
             </div>
@@ -206,7 +206,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
 
         {/* Row 2: Role */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Job Role <span className="text-rose-500">*</span>
           </label>
           <input
@@ -227,7 +227,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
         {/* Row 3: Drive Date, Deadline, Status */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Drive Date <span className="text-rose-500">*</span>
             </label>
             <input
@@ -245,7 +245,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Registration Deadline
             </label>
             <input
@@ -258,12 +258,12 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Status</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Status</label>
             <select
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white"
+              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-900"
             >
               {DRIVE_STATUSES.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -274,7 +274,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
 
         {/* Row 4: Location */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">Location</label>
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Location</label>
           <input
             type="text"
             name="location"
@@ -288,7 +288,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
         {/* Row 5: CTC, Min CGPA, Max Backlogs */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Package / CTC (LPA) <span className="text-rose-500">*</span>
             </label>
             <input
@@ -309,7 +309,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Min CGPA <span className="text-rose-500">*</span>
             </label>
             <input
@@ -331,7 +331,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Max Backlogs Allowed
             </label>
             <input
@@ -349,7 +349,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
 
         {/* Row 6: Eligible Branches */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-2">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-2">
             Eligible Departments <span className="text-rose-500">*</span>
           </label>
           <div className="flex flex-wrap gap-2">
@@ -363,7 +363,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors cursor-pointer ${
                     selected
                       ? 'bg-indigo-600 text-white border-indigo-600'
-                      : 'bg-white text-slate-600 border-slate-300 hover:border-indigo-400 hover:text-indigo-600'
+                      : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 dark:text-slate-500 border-slate-300 hover:border-indigo-400 hover:text-indigo-600'
                   }`}
                 >
                   {dept}
@@ -379,7 +379,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
         {/* Row 7: Registered & Selected (for edit / completed drives) */}
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Registered Students
             </label>
             <input
@@ -392,7 +392,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
             />
           </div>
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Selected Students
             </label>
             <input
@@ -408,7 +408,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
 
         {/* Row 8: Description */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Drive Description
           </label>
           <textarea
@@ -422,11 +422,11 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
         </div>
 
         {/* Footer */}
-        <div className="border-t border-slate-100 pt-4 flex items-center justify-end space-x-3 mt-6">
+        <div className="border-t border-slate-100 dark:border-slate-800 pt-4 flex items-center justify-end space-x-3 mt-6">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+            className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 dark:bg-slate-800 rounded-lg transition-colors cursor-pointer"
           >
             Cancel
           </button>

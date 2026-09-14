@@ -100,7 +100,7 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
         {/* Row 1: Name & Roll No */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Full Name <span className="text-rose-500">*</span>
             </label>
             <input
@@ -109,17 +109,17 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Aarav Sharma"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 ${
                 errors.name
-                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200 dark:border-rose-500/50 dark:ring-rose-500/20'
+                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:border-slate-700 dark:focus:ring-indigo-900/50'
               }`}
             />
             {errors.name && <p className="text-[11px] text-rose-500 mt-1">{errors.name}</p>}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Roll / Registration No. <span className="text-rose-500">*</span>
             </label>
             <input
@@ -128,10 +128,10 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
               value={formData.rollNo}
               onChange={handleChange}
               placeholder="e.g. 2022CSB001"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors font-mono ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors font-mono dark:bg-slate-800 dark:text-slate-100 ${
                 errors.rollNo
-                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200 dark:border-rose-500/50 dark:ring-rose-500/20'
+                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:border-slate-700 dark:focus:ring-indigo-900/50'
               }`}
             />
             {errors.rollNo && <p className="text-[11px] text-rose-500 mt-1">{errors.rollNo}</p>}
@@ -140,7 +140,7 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
 
         {/* Row 2: Email */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             College Email
           </label>
           <input
@@ -149,19 +149,19 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
             value={formData.email}
             onChange={handleChange}
             placeholder="e.g. student@college.edu"
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 transition-colors"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 transition-colors dark:bg-slate-800 dark:text-slate-100"
           />
         </div>
 
         {/* Row 3: Branch, CGPA, Backlogs */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">Department</label>
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Department</label>
             <select
               name="branch"
               value={formData.branch}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 bg-white dark:bg-slate-800 dark:text-slate-100"
             >
               {AVAILABLE_DEPARTMENTS.map((dept) => (
                 <option key={dept} value={dept}>{dept}</option>
@@ -170,7 +170,7 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               CGPA <span className="text-rose-500">*</span>
             </label>
             <input
@@ -182,17 +182,17 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
               value={formData.cgpa}
               onChange={handleChange}
               placeholder="e.g. 8.45"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 ${
                 errors.cgpa
-                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200 dark:border-rose-500/50 dark:ring-rose-500/20'
+                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:border-slate-700 dark:focus:ring-indigo-900/50'
               }`}
             />
             {errors.cgpa && <p className="text-[11px] text-rose-500 mt-1">{errors.cgpa}</p>}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-700 mb-1">
+            <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
               Active Backlogs <span className="text-rose-500">*</span>
             </label>
             <input
@@ -203,10 +203,10 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
               value={formData.backlogs}
               onChange={handleChange}
               placeholder="0"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 ${
                 errors.backlogs
-                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200 dark:border-rose-500/50 dark:ring-rose-500/20'
+                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:border-slate-700 dark:focus:ring-indigo-900/50'
               }`}
             />
             {errors.backlogs && <p className="text-[11px] text-rose-500 mt-1">{errors.backlogs}</p>}
@@ -215,7 +215,7 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
 
         {/* Row 4: Skills */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
             Skills (Comma Separated)
           </label>
           <input
@@ -224,43 +224,43 @@ export const StudentModal = ({ isOpen, onClose, onSave, studentToEdit }) => {
             value={formData.skillsString}
             onChange={handleChange}
             placeholder="e.g. React, Python, System Design, Docker"
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 dark:bg-slate-800 dark:text-slate-100"
           />
-          <p className="text-[11px] text-slate-400 mt-1">Separate multiple skills with a comma</p>
+          <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-1">Separate multiple skills with a comma</p>
         </div>
 
         {/* Row 5: Placement Status */}
         <div>
-          <label className="block text-xs font-semibold text-slate-700 mb-1">Placement Status</label>
+          <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Placement Status</label>
           <select
             name="status"
             value={formData.status}
             onChange={handleChange}
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 dark:focus:ring-indigo-900/50 bg-white dark:bg-slate-800 dark:text-slate-100"
           >
             {STATUS_OPTIONS.map((s) => (
               <option key={s} value={s}>{s}</option>
             ))}
           </select>
           {formData.status === 'Placed' && studentToEdit?.placedDetails && (
-            <p className="text-[11px] text-emerald-700 mt-1">
+            <p className="text-[11px] text-emerald-700 dark:text-emerald-500 mt-1">
               ✓ Placement details from drive record will be retained.
             </p>
           )}
         </div>
 
         {/* Footer Actions */}
-        <div className="border-t border-slate-100 pt-4 flex items-center justify-end space-x-3 mt-6">
+        <div className="border-t border-slate-100 dark:border-slate-800 pt-4 flex items-center justify-end space-x-3 mt-6">
           <button
             type="button"
             onClick={onClose}
-            className="px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+            className="px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors cursor-pointer"
           >
             Cancel
           </button>
           <button
             type="submit"
-            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-sm shadow-indigo-200 transition-colors cursor-pointer"
+            className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg shadow-sm shadow-indigo-200 dark:shadow-none transition-colors cursor-pointer"
           >
             {studentToEdit ? 'Save Changes' : 'Add Student'}
           </button>

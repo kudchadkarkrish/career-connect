@@ -38,11 +38,11 @@ const formatDate = (dateStr) => {
 // ── KPI Card ─────────────────────────────────────────────────────────────────
 const KpiCard = ({ icon: Icon, label, value, sub, accent }) => {
   const ACCENT = {
-    indigo:  { bg: 'bg-indigo-50',  icon: 'bg-indigo-100 text-indigo-700',  value: 'text-indigo-700',  border: 'border-indigo-200/60' },
-    emerald: { bg: 'bg-emerald-50', icon: 'bg-emerald-100 text-emerald-700', value: 'text-emerald-700', border: 'border-emerald-200/60' },
-    amber:   { bg: 'bg-amber-50',   icon: 'bg-amber-100 text-amber-700',    value: 'text-amber-700',   border: 'border-amber-200/60' },
-    blue:    { bg: 'bg-blue-50',    icon: 'bg-blue-100 text-blue-700',      value: 'text-blue-700',    border: 'border-blue-200/60' },
-    slate:   { bg: 'bg-white',      icon: 'bg-slate-100 text-slate-700',    value: 'text-slate-900',   border: 'border-slate-200' },
+    indigo:  { bg: 'bg-indigo-50 dark:bg-indigo-950/40',  icon: 'bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-400',  value: 'text-indigo-700 dark:text-indigo-400',  border: 'border-indigo-200/60 dark:border-indigo-800/60' },
+    emerald: { bg: 'bg-emerald-50 dark:bg-emerald-950/40', icon: 'bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400', value: 'text-emerald-700 dark:text-emerald-400', border: 'border-emerald-200/60 dark:border-emerald-800/60' },
+    amber:   { bg: 'bg-amber-50 dark:bg-amber-950/40',   icon: 'bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400',    value: 'text-amber-700 dark:text-amber-400',   border: 'border-amber-200/60 dark:border-amber-800/60' },
+    blue:    { bg: 'bg-blue-50 dark:bg-blue-950/40',    icon: 'bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400',      value: 'text-blue-700 dark:text-blue-400',    border: 'border-blue-200/60 dark:border-blue-800/60' },
+    slate:   { bg: 'bg-white dark:bg-slate-900',      icon: 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300',    value: 'text-slate-900 dark:text-slate-100',   border: 'border-slate-200 dark:border-slate-700' },
   };
   const c = ACCENT[accent] || ACCENT.slate;
 
@@ -52,9 +52,9 @@ const KpiCard = ({ icon: Icon, label, value, sub, accent }) => {
         <Icon className="w-5 h-5" />
       </div>
       <div className="min-w-0">
-        <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">{label}</p>
+        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">{label}</p>
         <p className={`text-2xl font-bold leading-none ${c.value}`}>{value}</p>
-        {sub && <p className="text-[11px] text-slate-500 mt-1">{sub}</p>}
+        {sub && <p className="text-[11px] text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-1">{sub}</p>}
       </div>
     </div>
   );
@@ -65,23 +65,23 @@ const PieTooltip = ({ active, payload }) => {
   if (!active || !payload?.length) return null;
   const { name, value } = payload[0];
   return (
-    <div className="bg-white border border-slate-200 shadow-md rounded-xl px-3 py-2 text-xs">
-      <p className="font-semibold text-slate-800">{name}</p>
-      <p className="text-slate-500">{value} student{value !== 1 ? 's' : ''}</p>
+    <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-md rounded-xl px-3 py-2 text-xs">
+      <p className="font-semibold text-slate-800 dark:text-slate-200">{name}</p>
+      <p className="text-slate-500 dark:text-slate-400 dark:text-slate-500">{value} student{value !== 1 ? 's' : ''}</p>
     </div>
   );
 };
 
 // ── Upcoming Drive row ────────────────────────────────────────────────────────
 const DriveRow = ({ drive, onNavigate }) => (
-  <div className="flex items-start justify-between py-3.5 border-b border-slate-100 last:border-0 gap-4">
+  <div className="flex items-start justify-between py-3.5 border-b border-slate-100 dark:border-slate-800 last:border-0 gap-4">
     <div className="min-w-0">
       <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-        <span className="text-sm font-bold text-slate-900 truncate">{drive.role}</span>
+        <span className="text-sm font-bold text-slate-900 dark:text-slate-100 truncate">{drive.role}</span>
         <Badge variant={getDriveStatusVariant(drive.status)} size="xs">{drive.status}</Badge>
       </div>
       <p className="text-xs font-medium text-indigo-600 mb-1">{drive.companyName}</p>
-      <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-500">
+      <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-500 dark:text-slate-400 dark:text-slate-500">
         <span className="flex items-center gap-1">
           <CalendarDays className="w-3 h-3" /> {formatDate(drive.driveDate)}
         </span>
@@ -95,7 +95,7 @@ const DriveRow = ({ drive, onNavigate }) => (
     </div>
     <div className="text-right shrink-0">
       <p className="text-sm font-bold text-emerald-700">₹{drive.packageLPA} LPA</p>
-      <p className="text-[11px] text-slate-400 mt-0.5">{drive.registeredCount ?? 0} registered</p>
+      <p className="text-[11px] text-slate-400 dark:text-slate-500 mt-0.5">{drive.registeredCount ?? 0} registered</p>
     </div>
   </div>
 );
@@ -166,8 +166,8 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Dashboard</h1>
-        <p className="text-sm text-slate-500 mt-1">
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Dashboard</h1>
+        <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-1">
           Live overview of your campus placement activity.
         </p>
       </div>
@@ -224,22 +224,22 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 
         {/* Placement Overview */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-xs p-5">
-          <h2 className="text-sm font-bold text-slate-800 mb-4">Placement Overview</h2>
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs p-5">
+          <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-4">Placement Overview</h2>
 
           {students.length === 0 ? (
-            <p className="text-xs text-slate-400 text-center py-8">No student records yet.</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500 text-center py-8">No student records yet.</p>
           ) : (
             <div className="space-y-3">
               {/* Placed */}
               <div>
                 <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span className="font-semibold text-slate-700">Placed</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-300">Placed</span>
                   <span className="font-bold text-emerald-700">
                     {placedStudents.length} / {students.length}
                   </span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
                   <div
                     className="h-2.5 rounded-full bg-emerald-500 transition-all duration-500"
                     style={{ width: `${(placedStudents.length / students.length) * 100}%` }}
@@ -250,12 +250,12 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
               {/* Seeking Placement (Unplaced) */}
               <div>
                 <div className="flex items-center justify-between text-xs mb-1.5">
-                  <span className="font-semibold text-slate-700">Seeking Placement</span>
+                  <span className="font-semibold text-slate-700 dark:text-slate-300">Seeking Placement</span>
                   <span className="font-bold text-amber-700">
                     {unplacedStudents.length} / {students.length}
                   </span>
                 </div>
-                <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
                   <div
                     className="h-2.5 rounded-full bg-amber-400 transition-all duration-500"
                     style={{ width: `${(unplacedStudents.length / students.length) * 100}%` }}
@@ -267,12 +267,12 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
               {optedOutStudents.length > 0 && (
                 <div>
                   <div className="flex items-center justify-between text-xs mb-1.5">
-                    <span className="font-semibold text-slate-700">Opted Out</span>
-                    <span className="font-bold text-slate-500">
+                    <span className="font-semibold text-slate-700 dark:text-slate-300">Opted Out</span>
+                    <span className="font-bold text-slate-500 dark:text-slate-400 dark:text-slate-500">
                       {optedOutStudents.length} / {students.length}
                     </span>
                   </div>
-                  <div className="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+                  <div className="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2.5 overflow-hidden">
                     <div
                       className="h-2.5 rounded-full bg-slate-400 transition-all duration-500"
                       style={{ width: `${(optedOutStudents.length / students.length) * 100}%` }}
@@ -282,18 +282,18 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
               )}
 
               {/* Stat pills */}
-              <div className="pt-3 border-t border-slate-100 grid grid-cols-3 gap-2 text-center">
-                <div className="bg-emerald-50 border border-emerald-100 rounded-xl py-2.5 px-2">
+              <div className="pt-3 border-t border-slate-100 dark:border-slate-800 grid grid-cols-3 gap-2 text-center">
+                <div className="bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-100 dark:border-emerald-900 rounded-xl py-2.5 px-2">
                   <p className="text-lg font-bold text-emerald-700">{placedStudents.length}</p>
                   <p className="text-[10px] text-emerald-600 mt-0.5">Placed</p>
                 </div>
-                <div className="bg-amber-50 border border-amber-100 rounded-xl py-2.5 px-2">
+                <div className="bg-amber-50 dark:bg-amber-950/50 border border-amber-100 dark:border-amber-900 rounded-xl py-2.5 px-2">
                   <p className="text-lg font-bold text-amber-700">{unplacedStudents.length}</p>
                   <p className="text-[10px] text-amber-600 mt-0.5">Unplaced</p>
                 </div>
-                <div className="bg-slate-50 border border-slate-100 rounded-xl py-2.5 px-2">
-                  <p className="text-lg font-bold text-slate-600">{optedOutStudents.length}</p>
-                  <p className="text-[10px] text-slate-500 mt-0.5">Opted Out</p>
+                <div className="bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-xl py-2.5 px-2">
+                  <p className="text-lg font-bold text-slate-600 dark:text-slate-400 dark:text-slate-500">{optedOutStudents.length}</p>
+                  <p className="text-[10px] text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-0.5">Opted Out</p>
                 </div>
               </div>
             </div>
@@ -301,11 +301,11 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
         </div>
 
         {/* Placement Status Pie Chart */}
-        <div className="bg-white rounded-xl border border-slate-200 shadow-xs p-5">
-          <h2 className="text-sm font-bold text-slate-800 mb-4">Placement Status Distribution</h2>
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs p-5">
+          <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-4">Placement Status Distribution</h2>
           {pieData.length === 0 ? (
             <div className="flex items-center justify-center h-48">
-              <p className="text-xs text-slate-400">No student data to display.</p>
+              <p className="text-xs text-slate-400 dark:text-slate-500">No student data to display.</p>
             </div>
           ) : (
             <ResponsiveContainer width="100%" height={220}>
@@ -331,7 +331,7 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
                   iconType="circle"
                   iconSize={8}
                   formatter={(value) => (
-                    <span className="text-xs text-slate-600 font-medium">{value}</span>
+                    <span className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 font-medium">{value}</span>
                   )}
                 />
               </PieChart>
@@ -341,9 +341,9 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
       </div>
 
       {/* ── Upcoming Drives ── */}
-      <div className="bg-white rounded-xl border border-slate-200 shadow-xs p-5">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs p-5">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-bold text-slate-800">Upcoming &amp; Active Drives</h2>
+          <h2 className="text-sm font-bold text-slate-800 dark:text-slate-200">Upcoming &amp; Active Drives</h2>
           {onNavigate && (
             <button
               type="button"
@@ -358,7 +358,7 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
         {upcomingDrives.length === 0 ? (
           <div className="py-10 text-center">
             <Briefcase className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-            <p className="text-xs text-slate-400">No upcoming or active drives at the moment.</p>
+            <p className="text-xs text-slate-400 dark:text-slate-500">No upcoming or active drives at the moment.</p>
           </div>
         ) : (
           <div>

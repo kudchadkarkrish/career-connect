@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Enable Tailwind v4 class-based dark mode — fires when <html class="dark"> */
+@variant dark (&:where(.dark, .dark *));
+
 body {
   background-color: #f8fafc;
   color: #0f172a;
@@ -8,3 +11,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Hide scrollbar on nav strip */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

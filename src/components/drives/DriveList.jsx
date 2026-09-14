@@ -119,7 +119,7 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
         <div className="fixed bottom-6 right-6 z-50 flex items-center p-4 bg-slate-900 text-white rounded-xl shadow-xl border border-slate-800 text-xs font-medium space-x-2.5">
           <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
           <span>{toast}</span>
-          <button onClick={() => setToast(null)} className="text-slate-400 hover:text-white ml-2">
+          <button onClick={() => setToast(null)} className="text-slate-400 dark:text-slate-500 hover:text-white ml-2">
             <X className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -129,12 +129,12 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <div className="flex items-center space-x-3">
-            <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Placement Drives</h1>
+            <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">Placement Drives</h1>
             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/60">
               {drives.length} Total
             </span>
           </div>
-          <p className="text-sm text-slate-500 mt-1">
+          <p className="text-sm text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-1">
             Manage campus recruitment drives, eligibility criteria, and schedules.
           </p>
         </div>
@@ -151,9 +151,9 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
 
       {/* Quick stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div className="bg-white border border-slate-200 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-slate-900">{drives.length}</p>
-          <p className="text-xs text-slate-500 mt-0.5">Total Drives</p>
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{drives.length}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-0.5">Total Drives</p>
         </div>
         <div className="bg-indigo-50 border border-indigo-100 rounded-xl px-4 py-3 text-center shadow-xs">
           <p className="text-2xl font-bold text-indigo-700">{upcomingCount}</p>
@@ -179,21 +179,21 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
       </div>
 
       {/* Search, Filter & View Controls */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs flex flex-col md:flex-row gap-3 items-center justify-between">
+      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col md:flex-row gap-3 items-center justify-between">
         {/* Search */}
         <div className="relative w-full md:w-80">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-400 dark:text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search company, role, or location..."
-            className="w-full text-xs sm:text-sm pl-9 pr-8 py-2 rounded-lg border border-slate-200 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 transition-colors"
+            className="w-full text-xs sm:text-sm pl-9 pr-8 py-2 rounded-lg border border-slate-200 dark:border-slate-700 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 transition-colors"
           />
           {searchTerm && (
             <button
               onClick={() => setSearchTerm('')}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:text-slate-500"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -204,11 +204,11 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
         <div className="flex flex-wrap items-center gap-2 w-full md:w-auto justify-between md:justify-end">
           {/* Status filter */}
           <div className="flex items-center space-x-1.5">
-            <Filter className="w-3.5 h-3.5 text-slate-400 hidden sm:block" />
+            <Filter className="w-3.5 h-3.5 text-slate-400 dark:text-slate-500 hidden sm:block" />
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-slate-700 outline-none focus:border-indigo-500"
+              className="text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-2 text-slate-700 dark:text-slate-300 outline-none focus:border-indigo-500"
             >
               <option value="ALL">All Status</option>
               {DRIVE_STATUSES.map((s) => (
@@ -221,7 +221,7 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
           <select
             value={branchFilter}
             onChange={(e) => setBranchFilter(e.target.value)}
-            className="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-2 text-slate-700 outline-none focus:border-indigo-500"
+            className="text-xs bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg px-2.5 py-2 text-slate-700 dark:text-slate-300 outline-none focus:border-indigo-500"
           >
             <option value="ALL">All Depts</option>
             {AVAILABLE_DEPARTMENTS.map((d) => (
@@ -241,13 +241,13 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
           )}
 
           {/* Grid / Table toggle */}
-          <div className="flex items-center bg-slate-100 p-0.5 rounded-lg border border-slate-200">
+          <div className="flex items-center bg-slate-100 dark:bg-slate-800 p-0.5 rounded-lg border border-slate-200 dark:border-slate-700">
             <button
               type="button"
               onClick={() => setViewMode('grid')}
               title="Grid View"
               className={`p-1.5 rounded-md transition-colors ${
-                viewMode === 'grid' ? 'bg-white text-indigo-600 shadow-xs' : 'text-slate-500 hover:text-slate-800'
+                viewMode === 'grid' ? 'bg-white dark:bg-slate-900 text-indigo-600 shadow-xs' : 'text-slate-500 dark:text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:text-slate-200'
               }`}
             >
               <LayoutGrid className="w-4 h-4" />
@@ -257,7 +257,7 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
               onClick={() => setViewMode('table')}
               title="Table View"
               className={`p-1.5 rounded-md transition-colors ${
-                viewMode === 'table' ? 'bg-white text-indigo-600 shadow-xs' : 'text-slate-500 hover:text-slate-800'
+                viewMode === 'table' ? 'bg-white dark:bg-slate-900 text-indigo-600 shadow-xs' : 'text-slate-500 dark:text-slate-400 dark:text-slate-500 hover:text-slate-800 dark:text-slate-200'
               }`}
             >
               <List className="w-4 h-4" />
@@ -268,14 +268,14 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
 
       {/* Content */}
       {filteredDrives.length === 0 ? (
-        <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center shadow-xs">
-          <div className="w-12 h-12 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center mx-auto mb-3">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-700 p-12 text-center shadow-xs">
+          <div className="w-12 h-12 bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 rounded-full flex items-center justify-center mx-auto mb-3">
             <Briefcase className="w-6 h-6" />
           </div>
-          <h3 className="text-base font-semibold text-slate-800 mb-1">
+          <h3 className="text-base font-semibold text-slate-800 dark:text-slate-200 mb-1">
             {drives.length === 0 ? 'No drives created yet' : 'No matching drives found'}
           </h3>
-          <p className="text-xs text-slate-500 max-w-sm mx-auto mb-5">
+          <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-500 max-w-sm mx-auto mb-5">
             {drives.length === 0
               ? 'Start by creating a placement drive or restore the demo dataset.'
               : 'No drives match your current search and filter criteria.'}

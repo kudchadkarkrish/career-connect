@@ -8,8 +8,8 @@ export const DriveDeleteModal = ({ isOpen, onClose, onConfirm, drive }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Delete Placement Drive" maxWidth="max-w-md">
       <div className="space-y-4">
-        <div className="flex items-start space-x-3 p-3 bg-rose-50 border border-rose-100 rounded-xl text-rose-800">
-          <AlertTriangle className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+        <div className="flex items-start space-x-3 p-3 bg-rose-50 dark:bg-rose-950/40 border border-rose-100 dark:border-rose-900 rounded-xl text-rose-800 dark:text-rose-300">
+          <AlertTriangle className="w-5 h-5 text-rose-600 dark:text-rose-400 shrink-0 mt-0.5" />
           <div className="text-xs">
             <p className="font-semibold mb-1">Confirm Deletion</p>
             <p>
@@ -20,7 +20,7 @@ export const DriveDeleteModal = ({ isOpen, onClose, onConfirm, drive }) => {
           </div>
         </div>
 
-        <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           This drive record will be removed from your local storage. Student placement records
           that reference this drive will retain their historical data.
         </p>

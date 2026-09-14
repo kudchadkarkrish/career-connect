@@ -154,13 +154,13 @@ export const StudentList = ({ students, onStudentsChange }) => {
           <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{students.length}</p>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Total Students</p>
         </div>
-        <div className="bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-emerald-700">{placedCount}</p>
-          <p className="text-xs text-emerald-600 mt-0.5">Placed</p>
+        <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">{placedCount}</p>
+          <p className="text-xs text-emerald-600 dark:text-emerald-300 mt-0.5">Placed</p>
         </div>
-        <div className="bg-rose-50 border border-rose-100 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-rose-700">{unplacedCount}</p>
-          <p className="text-xs text-rose-600 mt-0.5">Unplaced</p>
+        <div className="bg-rose-50 dark:bg-rose-950/40 border border-rose-100 dark:border-rose-900 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-rose-700 dark:text-rose-400">{unplacedCount}</p>
+          <p className="text-xs text-rose-600 dark:text-rose-300 mt-0.5">Unplaced</p>
         </div>
       </div>
 

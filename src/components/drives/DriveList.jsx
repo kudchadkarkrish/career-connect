@@ -153,25 +153,25 @@ export const DriveList = ({ drives, onDrivesChange, companies }) => {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-3 text-center shadow-xs">
           <p className="text-2xl font-bold text-slate-900 dark:text-slate-100">{drives.length}</p>
-          <p className="text-xs text-slate-500 dark:text-slate-400 dark:text-slate-500 mt-0.5">Total Drives</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Total Drives</p>
         </div>
-        <div className="bg-indigo-50 border border-indigo-100 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-indigo-700">{upcomingCount}</p>
-          <p className="text-xs text-indigo-600 mt-0.5">Upcoming</p>
+        <div className="bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-indigo-700 dark:text-indigo-400">{upcomingCount}</p>
+          <p className="text-xs text-indigo-600 dark:text-indigo-300 mt-0.5">Upcoming</p>
         </div>
-        <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-amber-700">{ongoingCount}</p>
-          <p className="text-xs text-amber-600 mt-0.5">Ongoing</p>
+        <div className="bg-amber-50 dark:bg-amber-950/40 border border-amber-100 dark:border-amber-900 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-amber-700 dark:text-amber-400">{ongoingCount}</p>
+          <p className="text-xs text-amber-600 dark:text-amber-300 mt-0.5">Ongoing</p>
         </div>
-        <div className="bg-emerald-50 border border-emerald-100 rounded-xl px-4 py-3 text-center shadow-xs">
-          <p className="text-2xl font-bold text-emerald-700">{completedCount}</p>
-          <p className="text-xs text-emerald-600 mt-0.5">Completed</p>
+        <div className="bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900 rounded-xl px-4 py-3 text-center shadow-xs">
+          <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">{completedCount}</p>
+          <p className="text-xs text-emerald-600 dark:text-emerald-300 mt-0.5">Completed</p>
         </div>
       </div>
 
       {/* Demo notice */}
-      <div className="bg-amber-50/80 border border-amber-200/80 rounded-xl p-3.5 flex items-start space-x-3 text-amber-900 text-xs">
-        <Info className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+      <div className="bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/50 rounded-xl p-3.5 flex items-start space-x-3 text-amber-900 dark:text-amber-300 text-xs">
+        <Info className="w-4 h-4 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
         <div>
           <span className="font-semibold">Demo Environment: </span>
           Drive records below are synthetic and configured for portfolio showcase. You can create, edit, or delete drives — all changes persist in your browser session via localStorage.

@@ -21,35 +21,35 @@ export const DriveTable = ({ drives, onEdit, onDelete }) => {
         <table className="min-w-full divide-y divide-slate-100 dark:divide-slate-800">
           <thead>
             <tr className="bg-slate-50 dark:bg-slate-800">
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Company / Role
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Drive Date
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500 hidden md:table-cell">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 hidden md:table-cell">
                 Location
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 CTC (LPA)
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500 hidden lg:table-cell">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 hidden lg:table-cell">
                 Eligibility
               </th>
-              <th className="px-4 py-3 text-center text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-center text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Registered
               </th>
-              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Status
               </th>
-              <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 dark:text-slate-500">
+              <th className="px-4 py-3 text-right text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                 Actions
               </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50 dark:divide-slate-800">
             {drives.map((drive) => (
-              <tr key={drive.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 dark:bg-slate-800/70 transition-colors">
+              <tr key={drive.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/50 transition-colors">
                 {/* Company / Role */}
                 <td className="px-4 py-3">
                   <div className="text-sm font-semibold text-slate-900 dark:text-slate-100 leading-snug">

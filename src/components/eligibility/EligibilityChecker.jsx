@@ -246,13 +246,13 @@ export const EligibilityChecker = ({ students, drives }) => {
 
             <h2
               className={`text-2xl font-bold mb-1 ${
-                result.eligible ? 'text-emerald-800' : 'text-rose-800'
+                result.eligible ? 'text-emerald-800 dark:text-emerald-300' : 'text-rose-800 dark:text-rose-300'
               }`}
             >
               {result.eligible ? '✓ Eligible' : '✗ Not Eligible'}
             </h2>
 
-            <p className={`text-sm font-medium ${result.eligible ? 'text-emerald-700' : 'text-rose-700'}`}>
+            <p className={`text-sm font-medium ${result.eligible ? 'text-emerald-700 dark:text-emerald-400' : 'text-rose-700 dark:text-rose-400'}`}>
               {selectedStudent.name} is{' '}
               {result.eligible ? '' : 'not '}
               eligible for{' '}
@@ -262,12 +262,12 @@ export const EligibilityChecker = ({ students, drives }) => {
 
             {/* Pass / fail counts */}
             <div className="flex items-center justify-center gap-4 mt-3">
-              <span className="inline-flex items-center text-xs font-semibold text-emerald-700 space-x-1">
+              <span className="inline-flex items-center text-xs font-semibold text-emerald-700 dark:text-emerald-400 space-x-1">
                 <CheckCircle2 className="w-3.5 h-3.5" />
                 <span>{result.criteria.filter((c) => c.passed).length} passed</span>
               </span>
               {result.criteria.some((c) => !c.passed) && (
-                <span className="inline-flex items-center text-xs font-semibold text-rose-700 space-x-1">
+                <span className="inline-flex items-center text-xs font-semibold text-rose-700 dark:text-rose-400 space-x-1">
                   <XCircle className="w-3.5 h-3.5" />
                   <span>{result.criteria.filter((c) => !c.passed).length} failed</span>
                 </span>

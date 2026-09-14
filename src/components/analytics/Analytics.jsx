@@ -410,6 +410,7 @@ export const Analytics = ({ students = [], drives = [], companies = [] }) => {
                       outerRadius={75}
                       paddingAngle={4}
                       dataKey="value"
+                      stroke="none"
                     >
                       {driveStatusData.map((entry) => (
                         <Cell key={entry.name} fill={entry.fill} />

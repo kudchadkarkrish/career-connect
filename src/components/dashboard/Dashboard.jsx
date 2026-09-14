@@ -318,6 +318,7 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
                   outerRadius={85}
                   paddingAngle={3}
                   dataKey="value"
+                  stroke="none"
                 >
                   {pieData.map((entry) => (
                     <Cell
@@ -331,7 +332,7 @@ export const Dashboard = ({ companies, students, drives, onNavigate }) => {
                   iconType="circle"
                   iconSize={8}
                   formatter={(value) => (
-                    <span className="text-xs text-slate-600 dark:text-slate-400 dark:text-slate-500 font-medium">{value}</span>
+                    <span className="text-xs text-slate-600 dark:text-slate-300 font-medium">{value}</span>
                   )}
                 />
               </PieChart>

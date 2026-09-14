@@ -163,10 +163,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
             name="companyId"
             value={formData.companyId}
             onChange={handleCompanySelect}
-            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none bg-white dark:bg-slate-900 transition-colors ${
+            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none bg-white dark:bg-slate-800 dark:text-slate-100 transition-colors ${
               errors.companyId
                 ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
             }`}
           >
             <option value="">— Select a company —</option>
@@ -188,10 +188,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
                   if (errors.customCompanyName) setErrors((prev) => ({ ...prev, customCompanyName: null }));
                 }}
                 placeholder="Enter company name (e.g. Startup XYZ)"
-                className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+                className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 ${
                   errors.customCompanyName
                     ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                    : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                    : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
                 }`}
               />
               {errors.customCompanyName && (
@@ -215,10 +215,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
             value={formData.role}
             onChange={handleChange}
             placeholder="e.g. Software Engineer"
-            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+            className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 ${
               errors.role
                 ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
             }`}
           />
           {errors.role && <p className="text-[11px] text-rose-500 mt-1">{errors.role}</p>}
@@ -235,10 +235,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               name="driveDate"
               value={formData.driveDate}
               onChange={handleChange}
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 ${
                 errors.driveDate
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.driveDate && <p className="text-[11px] text-rose-500 mt-1">{errors.driveDate}</p>}
@@ -253,7 +253,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               name="deadline"
               value={formData.deadline}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 transition-colors"
             />
           </div>
 
@@ -263,7 +263,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-900"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 transition-colors"
             >
               {DRIVE_STATUSES.map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -281,7 +281,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
             value={formData.location}
             onChange={handleChange}
             placeholder="e.g. Campus Auditorium / Virtual"
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 transition-colors"
           />
         </div>
 
@@ -299,10 +299,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               value={formData.packageLPA}
               onChange={handleChange}
               placeholder="e.g. 16.5"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 ${
                 errors.packageLPA
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.packageLPA && <p className="text-[11px] text-rose-500 mt-1">{errors.packageLPA}</p>}
@@ -321,10 +321,10 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               value={formData.minCGPA}
               onChange={handleChange}
               placeholder="e.g. 7.5"
-              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors ${
+              className={`w-full text-sm rounded-lg border px-3 py-2 outline-none transition-colors dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 ${
                 errors.minCGPA
                   ? 'border-rose-300 focus:border-rose-500 ring-1 ring-rose-200'
-                  : 'border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
+                  : 'border-slate-300 dark:border-slate-700 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200'
               }`}
             />
             {errors.minCGPA && <p className="text-[11px] text-rose-500 mt-1">{errors.minCGPA}</p>}
@@ -342,7 +342,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               value={formData.maxBacklogs}
               onChange={handleChange}
               placeholder="0"
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 transition-colors"
             />
           </div>
         </div>
@@ -363,7 +363,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
                   className={`px-3 py-1.5 text-xs font-semibold rounded-lg border transition-colors cursor-pointer ${
                     selected
                       ? 'bg-indigo-600 text-white border-indigo-600'
-                      : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 dark:text-slate-500 border-slate-300 hover:border-indigo-400 hover:text-indigo-600'
+                      : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border-slate-300 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400'
                   }`}
                 >
                   {dept}
@@ -388,7 +388,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               name="registeredCount"
               value={formData.registeredCount}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 transition-colors"
             />
           </div>
           <div>
@@ -401,7 +401,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
               name="selectedCount"
               value={formData.selectedCount}
               onChange={handleChange}
-              className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200"
+              className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 bg-white dark:bg-slate-800 dark:text-slate-100 transition-colors"
             />
           </div>
         </div>
@@ -417,7 +417,7 @@ export const DriveModal = ({ isOpen, onClose, onSave, driveToEdit, companies }) 
             onChange={handleChange}
             rows={2}
             placeholder="Brief description of the drive..."
-            className="w-full text-sm rounded-lg border border-slate-300 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 resize-none"
+            className="w-full text-sm rounded-lg border border-slate-300 dark:border-slate-700 px-3 py-2 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-200 resize-none bg-white dark:bg-slate-800 dark:text-slate-100 dark:placeholder:text-slate-500 transition-colors"
           />
         </div>
 

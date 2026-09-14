@@ -24,6 +24,7 @@ const STORAGE_KEYS = {
  */
 const safeGet = (key, fallback) => {
   try {
+    if (typeof localStorage === 'undefined') return fallback;
     const item = localStorage.getItem(key);
     if (!item) return fallback;
     const parsed = JSON.parse(item);
@@ -39,6 +40,7 @@ const safeGet = (key, fallback) => {
  */
 const safeSet = (key, data) => {
   try {
+    if (typeof localStorage === 'undefined') return;
     localStorage.setItem(key, JSON.stringify(data));
   } catch (error) {
     console.error(`[StorageService] Failed to set key "${key}":`, error);
@@ -49,9 +51,18 @@ const safeSet = (key, data) => {
  * Initialize storage with demo seed data if not present
  */
 export const initStorage = () => {
+  if (typeof localStorage === 'undefined') {
+    return {
+      companies: [...INITIAL_COMPANIES],
+      students: [...INITIAL_STUDENTS],
+      drives: [...INITIAL_DRIVES]
+    };
+  }
+
   const existingCompanies = localStorage.getItem(STORAGE_KEYS.COMPANIES);
   const existingStudents = localStorage.getItem(STORAGE_KEYS.STUDENTS);
   const existingDrives = localStorage.getItem(STORAGE_KEYS.DRIVES);
+
 
   if (!existingCompanies) {
     safeSet(STORAGE_KEYS.COMPANIES, INITIAL_COMPANIES);

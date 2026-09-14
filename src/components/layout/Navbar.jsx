@@ -15,7 +15,7 @@ export const Navbar = ({ activeTab, onTabChange, onResetData }) => {
   const navItems = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, ready: false },
     { id: 'companies', label: 'Companies', icon: Building2, ready: true },
-    { id: 'students', label: 'Students', icon: Users, ready: false },
+    { id: 'students', label: 'Students', icon: Users, ready: true },
     { id: 'drives', label: 'Placement Drives', icon: Briefcase, ready: false },
     { id: 'eligibility', label: 'Eligibility', icon: CheckSquare, ready: false },
     { id: 'analytics', label: 'Analytics', icon: BarChart3, ready: false },

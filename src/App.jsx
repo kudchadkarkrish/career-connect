@@ -5,6 +5,7 @@ import CompanyList from './components/companies/CompanyList';
 import StudentList from './components/students/StudentList';
 import DriveList from './components/drives/DriveList';
 import EligibilityChecker from './components/eligibility/EligibilityChecker';
+import Analytics from './components/analytics/Analytics';
 import { initStorage, resetToDemoData } from './services/storageService';
 import { Clock, Building2 } from 'lucide-react';
 
@@ -66,6 +67,12 @@ function App() {
           <EligibilityChecker
             students={students}
             drives={drives}
+          />
+        ) : activeTab === 'analytics' ? (
+          <Analytics
+            students={students}
+            drives={drives}
+            companies={companies}
           />
         ) : (
           <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-12 text-center shadow-xs max-w-lg mx-auto mt-12">
